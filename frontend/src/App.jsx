@@ -10,6 +10,12 @@ function App() {
 
   axios.defaults.baseURL = import.meta.env.VITE_API_KEY;
 
+  try{
+    console.log(`this is NEV KEY = ${import.meta.env.VITE_API_KEY}`)
+  }catch(err){
+    console.log(err)
+  }
+
   useEffect(() => {
     async function fetchUsers() {
       try {
@@ -32,9 +38,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1 className=''>Vite + React + Tammarat</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
+        <button onClick={() => setCount((count) => count + 200)}>count is {count}</button>
         {users.length > 0 &&
           users.map((item, index) => (
             <div key={index}>
